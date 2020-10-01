@@ -1,0 +1,25 @@
+static void main(String[]args)
+{
+/*program to print prime numbers from 2 to 100*/
+            int count = 0;
+            Console.WriteLine("prime numbers are");
+            //int num = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= 100; i++)
+            {
+                count = 0;
+                if (i > 1)
+                {
+                    for (int j = 2; j < i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            count = 1;
+                            break;
+                        }
+                    }
+                }
+                if (count == 0)
+                    Console.Write(i+" ");
+            }
+            Console.ReadKey();
+}

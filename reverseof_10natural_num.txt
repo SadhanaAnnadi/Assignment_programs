@@ -1,0 +1,11 @@
+static void main(String[]args)
+{
+/* program to print first 10 natural numbers in reverse order*/
+            Console.WriteLine("first 10 natural numbersin reverse order are:");
+
+            for (int i = 10; i>=1; i--)
+            {
+                Console.WriteLine("{0}", i);
+            }
+            Console.ReadKey();
+}

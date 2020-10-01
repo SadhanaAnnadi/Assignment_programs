@@ -1,0 +1,23 @@
+static void main(String[]args)
+{ 
+ /* program to find string is palindrome*/
+             string inputstr, revstr = string.Empty;
+             Console.Write("Enter a string : ");
+             inputstr = Console.ReadLine();
+             if (inputstr != null)
+             {
+                 for (int i = inputstr.Length - 1; i >= 0; i--)
+                 {
+                     revstr += inputstr[i].ToString();
+                 }
+                 if (revstr == inputstr)
+                 {
+                     Console.WriteLine("String is Palindrome Input = {0} and Output= {1}", inputstr, revstr);
+                 }
+                 else
+                 {
+                     Console.WriteLine("String is not Palindrome Input = {0} and Output= {1}", inputstr, revstr);
+                 }
+             }
+             Console.ReadLine();
+}

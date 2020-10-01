@@ -1,0 +1,14 @@
+static void main(String []args)
+{
+/* program to print reverse of a given number*/
+            int num;
+            Console.WriteLine("Enter the number");
+            num = Convert.ToInt32(Console.ReadLine());
+            while(num!=0)
+            {
+               int rem = num % 10;
+                Console.Write(rem);
+                num = num / 10;
+            }
+            Console.ReadKey();
+}

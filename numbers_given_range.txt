@@ -1,0 +1,15 @@
+static void main(String[]args)
+{
+/*program to print numbers between a given range*/
+              int srt, lst;
+              Console.WriteLine("Enter starting number");
+              srt=Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("Enter last number");
+              lst = Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("\n");
+              for (int i =srt;i<=lst; i++)
+              {
+                  Console.WriteLine("{0}", i);
+              }
+              Console.ReadKey();
+}

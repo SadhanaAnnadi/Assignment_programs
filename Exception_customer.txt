@@ -1,0 +1,82 @@
+ class TestCustomer
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the Customer number");
+            string cno = Console.ReadLine();
+            Console.WriteLine("Enter the customer name");
+            string cname = Console.ReadLine();
+            Console.WriteLine("Enter the Category");
+            string catg = Console.ReadLine();
+            Customer c = new Customer(cno,cname,catg);
+            try
+            {
+                c.INExcep(cno, cname, catg);
+            }
+            catch (InvalidException  ex)
+            {
+                Console.WriteLine( ex.Message);
+            }
+            Console.ReadKey();
+        }
+        public class InvalidException: Exception
+        {
+            public InvalidException(string message) : base(message)
+            {
+
+            }
+
+        }
+        public class Customer
+        {
+            private string custNo;
+            private string custName;
+            private string category;
+            public string CustNO
+            {
+                get
+                {
+                    return custNo;
+                }
+                set { custNo = value; }
+            }
+            public string CustName
+            {
+                get { return custName; }
+                set { custName = value; }
+            }
+            public string Category
+            {
+                get { return category; }
+                set { category = value; }
+            }
+            public Customer(string cno, string cname, string catg)
+            {
+
+                this.custNo = cno;
+                this.custName = cname;
+                this.category = catg;
+            }
+            public void INExcep(string cno,string cname,string catg)
+            {
+                if (!(cno.StartsWith("c")|| cno.StartsWith("C")))
+                    throw (new InvalidException("Invalid Input Exception"));
+                else
+                    Console.WriteLine("customernumber={0}",cno);
+                if (cname.Length < 4)
+                    throw (new InvalidException("Invalid Input Exception"));
+                else
+                Console.WriteLine("customer Name={0}", cname);
+                if (catg == "platinum" || catg == "gold" || catg == "silver")
+                    Console.WriteLine("category={0}", catg);
+               
+                else
+                    throw (new InvalidException("Invalid Input Exception"));
+
+
+            }
+
+        }
+       
+    }
+}

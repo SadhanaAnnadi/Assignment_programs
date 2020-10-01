@@ -1,0 +1,11 @@
+ static void main(String args[])
+{
+            /* program to print first 10 natural numbers*/
+            Console.WriteLine("first 10 natural numbers are:");
+
+            for (int i=1;i<=10;i++)
+            {
+                Console.WriteLine("{0}", i);
+            }
+            Console.ReadKey();
+}
