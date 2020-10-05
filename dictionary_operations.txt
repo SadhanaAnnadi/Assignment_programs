@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace dictionary
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            dict.Add(1, "Bangalore");
+            dict.Add(2, "Mumbai");
+            dict.Add(3, "Pune");
+            dict.Add(4, "Hyderabad");
+            dict.Add(5, "Chennai");
+            dict.Add(6, "Delhi");
+            dict[7] = "Kolkatta";
+            dict[8] = "Ahmedabad";
+            dict[9] = "Nodia";
+            dict[10] = "Tiruvananthapuram";
+            foreach (KeyValuePair<int,string> pair in dict)
+            {
+                Console.WriteLine("The elements of directory are: key=" + pair.Key +" value="+ pair.Value);
+            }
+            Console.WriteLine("Number of elements present in dictionary= "+dict.Count());
+            Console.WriteLine("The first element removed "+dict.Remove(1));
+            Console.WriteLine("The second element removed " + dict.Remove(2));
+            Console.WriteLine("The third element removed " + dict.Remove(3));
+            Console.WriteLine("The fourth element removed " + dict.Remove(4));
+            Console.WriteLine("The fifth element removed " + dict.Remove(5));
+            Console.WriteLine("The sixth element removed " + dict.Remove(6));
+
+            Console.WriteLine("Number of elements after deleting 6 elements= "+dict.Count());
+            foreach(KeyValuePair<int,string> pair in dict)
+            {
+                Console.WriteLine("The elements of directory are: key=" + pair.Key + " value=" + pair.Value);
+            }
+            Console.WriteLine("The seventh element removed " + dict.Remove(7));
+            Console.WriteLine("The eigthelement removed " + dict.Remove(8));
+            Console.WriteLine("The ninth element removed " + dict.Remove(9));
+            Console.WriteLine("The tenth element removed " + dict.Remove(10));
+            Console.WriteLine("Add more key value pairs sinces there are only four elements in them");
+            dict.Add(1, "Bangalore");
+            dict.Add(2, "Mumbai");
+            dict.Add(3, "Pune");
+            dict.Add(4, "Hyderabad");
+            dict.Add(5, "Chennai");
+            dict.Add(6, "Delhi");
+            dict[7] = "Kolkatta";
+            dict[8] = "Ahmedabad";
+            dict[9] = "Nodia";
+            dict[10] = "Tiruvananthapuram";
+            Console.WriteLine("The first element removed " + dict.Remove(1));
+            Console.WriteLine("Number of elements after deleting 5 elements= " + dict.Count());
+            foreach (KeyValuePair<int, string> pair in dict)
+            {
+                Console.WriteLine("The elements of directory are: key=" + pair.Key + " value=" + pair.Value);
+            }
+            Console.WriteLine("The second element removed " + dict.Remove(2));
+            Console.WriteLine("The third element removed " + dict.Remove(3));
+            Console.WriteLine("The fourth element removed " + dict.Remove(4));
+            Console.WriteLine("The fifth element removed " + dict.Remove(5));
+            Console.WriteLine("Number of elements after deleting 4 elements= " + dict.Count());
+            foreach (KeyValuePair<int, string> pair in dict)
+            {
+                Console.WriteLine("The elements of directory are: key=" + pair.Key + " value=" + pair.Value);
+            }
+            Console.WriteLine("The sixth element removed " + dict.Remove(6));
+            Console.WriteLine("The seventh element removed " + dict.Remove(7));
+            Console.WriteLine("The eigthelement removed " + dict.Remove(8));
+            Console.WriteLine("Number of elements after deleting 3 elements= " + dict.Count());
+            foreach (KeyValuePair<int, string> pair in dict)
+            {
+                Console.WriteLine("The elements of directory are: key=" + pair.Key + " value=" + pair.Value);
+            }
+            Console.WriteLine("The ninth element removed " + dict.Remove(9));
+            Console.WriteLine("The tenth element removed " + dict.Remove(10));
+            if (dict.Count() != 0)
+            {
+                Console.WriteLine("Number of elements after deleting 2 elements= " + dict.Count());
+                foreach (KeyValuePair<int, string> pair in dict)
+                {
+                    Console.WriteLine("The elements of directory are: key=" + pair.Key + " value=" + pair.Value);
+                }
+            }
+            else
+                Console.WriteLine("No elements in dictionary");
+
+           
+            Console.ReadKey();
+}
+}
+}

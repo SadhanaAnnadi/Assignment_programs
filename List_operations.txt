@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Listelements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+ var user = new List<string>() { "sadhana", "sindu", "ravi", "rahul", "rohith" };
+            user.Add("hello");
+            user.Add("world");
+            user.Add("we are programming");
+            foreach ( var list in user)
+            {
+                Console.WriteLine(list);
+            }
+            Console.WriteLine("display using index " + user[0]);
+            Console.WriteLine("display using index " + user[1]);
+            Console.WriteLine("display using index " + user[2]);
+            Console.WriteLine("display using index " + user[3]);
+            Console.WriteLine("display using index " + user[4]);
+            Console.WriteLine("Adding Dravid using insert");
+            user.Insert(8, "Dravid");
+
+            Console.WriteLine("display using index " + user[8]);
+            Console.WriteLine("Remove'hello' from list: " + user.Remove("hello"));//removing element
+            Console.WriteLine("Remove ' sadhana' from list: " + user.Remove("sadhana"));
+            Console.WriteLine(" Remaining elements after removing");
+            foreach (var list in user)
+            {
+                Console.WriteLine(list);
+            }
+            Console.WriteLine("Check if the list contains 'sindu': "+user.Contains("sindu"));
+            Console.WriteLine("Check if the list contains 'hello': "+ user.Contains("hello"));
+            Console.ReadKey();
+}
+}
+}
