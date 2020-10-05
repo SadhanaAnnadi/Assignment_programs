@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace queue_exp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             Queue<int> myqueue = new Queue<int>();
+             myqueue.Enqueue(2);
+             myqueue.Enqueue(4);
+             myqueue.Enqueue(6);
+             myqueue.Enqueue(8);
+             myqueue.Enqueue(10);
+             myqueue.Enqueue(12);
+            myqueue.Enqueue(14);
+            myqueue.Enqueue(16);
+            myqueue.Enqueue(18);
+            myqueue.Enqueue(20);
+            // checking for elements present in queue
+            Console.WriteLine("Check whether even numbers from 2 to 20  are present in queue are not: " + myqueue.Contains(2) + " " + myqueue.Contains(4) + " " + myqueue.Contains(6) + " "
+               + myqueue.Contains(8) + " " + myqueue.Contains(10) + " " + myqueue.Contains(12) + " " + myqueue.Contains(14) + " " + myqueue.Contains(16) + " " + myqueue.Contains(18) + " " + myqueue.Contains(20));
+            foreach (int s in myqueue)
+             {
+                 Console.WriteLine(s);
+             }
+             Console.WriteLine("count of elemts: " + myqueue.Count());
+             Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            // checking after dequeue method 
+            Console.WriteLine("Check if the dequed elemnts present or not: " + myqueue.Contains(2) + " " + myqueue.Contains(4) + " " + myqueue.Contains(6) + " "
+               + myqueue.Contains(8) + " " + myqueue.Contains(10) + " " + myqueue.Contains(12) + " " + myqueue.Contains(14) + " " + myqueue.Contains(16) + " " + myqueue.Contains(18) + " " + myqueue.Contains(20));
+            if (myqueue.Count() == 0)
+             {
+                 Console.WriteLine("No element is present in queue");
+             }
+             else
+             {
+                 Console.WriteLine("elements present after 6 times dequeue method is:");
+                 foreach (int s in myqueue)
+                 {
+                     Console.WriteLine(s);
+                 }
+                 Console.WriteLine("peek element in queue is : " + myqueue.Peek());
+                Console.WriteLine("count of elemts: " + myqueue.Count());
+            }
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("since we gave only 4 elements in queue we enqueue more elements in to queue and then dequeue");
+            myqueue.Enqueue(2);
+            myqueue.Enqueue(4);
+            myqueue.Enqueue(6);
+            myqueue.Enqueue(8);
+            myqueue.Enqueue(10);
+            myqueue.Enqueue(12);
+            myqueue.Enqueue(14);
+            myqueue.Enqueue(16);
+            myqueue.Enqueue(18);
+            myqueue.Enqueue(20);
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            if (myqueue.Count() == 0)
+            {
+                Console.WriteLine("No element is present in queue");
+            }
+            else
+            {
+                Console.WriteLine("elements present after 5 times dequeue method is:");
+                foreach (int s in myqueue)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("peek element in queue is : " + myqueue.Peek());
+                Console.WriteLine("count of elemts: " + myqueue.Count());
+            }
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            if (myqueue.Count() == 0)
+            {
+                Console.WriteLine("No element is present in queue");
+            }
+            else
+            {
+                Console.WriteLine("elements present after 4 times dequeue method is:");
+                foreach (int s in myqueue)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("peek element in queue is : " + myqueue.Peek());
+                Console.WriteLine("count of elemts: " + myqueue.Count());
+            }
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            if (myqueue.Count() == 0)
+            {
+                Console.WriteLine("No element is present in queue");
+            }
+            else
+            {
+                Console.WriteLine("elements present after 3 times dequeue method is:");
+                foreach (int s in myqueue)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("peek element in queue is : " + myqueue.Peek());
+                Console.WriteLine("count of elemts: " + myqueue.Count());
+            }
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("deleted element in queue is:" + myqueue.Dequeue());
+            Console.WriteLine("elements present after 2 times dequeue method is:");
+            if (myqueue.Count() == 0)
+            {
+                Console.WriteLine("No element is present in queue");
+            }
+            else
+            {
+               
+                foreach (int s in myqueue)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("peek element in queue is : " + myqueue.Peek());
+                Console.WriteLine("count of elemts: " + myqueue.Count());
+            }
+            Console.ReadKey();
+}
+}
+}

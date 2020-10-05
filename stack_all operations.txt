@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace stack
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> mystack = new Stack<int>();
+            //Console.WriteLine("Enter elements in to stack");
+            mystack.Push(2);
+            mystack.Push(4);
+            mystack.Push(6);
+            mystack.Push(8);
+            mystack.Push(10);
+            mystack.Push(12);
+            mystack.Push(14);
+            mystack.Push(16);
+            mystack.Push(18);
+            mystack.Push(20);
+            // checking for elements present in stack
+            Console.WriteLine("Check whether even numbers from 2 to 20  are present in stack are not"+ mystack.Contains(2)+ " " + mystack.Contains(4)+ " " + mystack.Contains(6)+ " "
+               + mystack.Contains(8)+ " " + mystack.Contains(10)+ " " + mystack.Contains(12)+ " " + mystack.Contains(14)+ " " + mystack.Contains(16)+ " " + mystack.Contains(18)+ " " + mystack.Contains(20));
+            if (mystack.Count() != 0)
+            {
+                foreach (int s in mystack)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("peek element of stack is:" + mystack.Peek());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                Console.WriteLine("element removed:" + mystack.Pop());
+                //checking after poping
+                Console.WriteLine("Check if poped elements present in stack or not: " + mystack.Contains(2) + " " + mystack.Contains(4) + " " + mystack.Contains(6) + " "
+               + mystack.Contains(8) + " " + mystack.Contains(10) + " " + mystack.Contains(12) + " " + mystack.Contains(14) + " " + mystack.Contains(16) + " " + mystack.Contains(18) + " " + mystack.Contains(20));
+                Console.WriteLine("Remaining Elements in stack after poping 6 times are");
+                if (mystack.Count() != 0)
+                {
+                    foreach (int i in mystack)
+                        Console.WriteLine(i);
+                    Console.WriteLine("peek element of stack is:" + mystack.Peek());
+                    Console.WriteLine("Number of elements present in stack are: {0}", mystack.Count());
+                }
+                else
+                    Console.WriteLine("No elements in stack");
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Push(2);
+                mystack.Push(4);
+                mystack.Push(6);
+                mystack.Push(8);
+                mystack.Push(10);
+                mystack.Push(12);
+                mystack.Push(14);
+                mystack.Push(16);
+                mystack.Push(18);
+                mystack.Push(20);
+                mystack.Pop();
+                Console.WriteLine("Remaining Elements in stack after poping 5 times are");
+                if (mystack.Count() != 0)
+                {
+                    foreach (int i in mystack)
+                        Console.WriteLine(i);
+                    Console.WriteLine("peek element of stack is:" + mystack.Peek());
+                    Console.WriteLine("Number of elements present in stack are: {0}", mystack.Count());
+                }
+                else
+                    Console.WriteLine("No elements in stack");
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Pop();
+
+                Console.WriteLine("Remaining Elements in stack after poping 4times are");
+                if (mystack.Count() != 0)
+                {
+                    foreach (int i in mystack)
+                        Console.WriteLine(i);
+                    Console.WriteLine("peek element of stack after popping 5 elements is:" + mystack.Peek());
+                    Console.WriteLine("Number of elements present in stack are: {0}", mystack.Count());
+                }
+                else
+                    Console.WriteLine("No elements in stack");
+                mystack.Pop();
+                mystack.Pop();
+                mystack.Pop();
+                Console.WriteLine("Remaining Elements in stack after poping 3 times are");
+                if (mystack.Count() != 0)
+                {
+                    foreach (int i in mystack)
+                        Console.WriteLine(i);
+                    Console.WriteLine("peek element of stack after popping 3 elements is:" + mystack.Peek());
+                    Console.WriteLine("Number of elements present in stack are: {0}", mystack.Count());
+                }
+                else
+                    Console.WriteLine("No elements in stack");
+                mystack.Pop();
+                mystack.Pop();
+                Console.WriteLine("Remaining Elements in stack after poping 2 times are");
+                if (mystack.Count() != 0)
+                {
+                    foreach (int i in mystack)
+                        Console.WriteLine(i);
+                    Console.WriteLine("peek element of stack after popping 3 elements is:" + mystack.Peek());
+                    Console.WriteLine("Number of elements present in stack are: {0}", mystack.Count());
+                }
+                else
+                    Console.WriteLine("No elements in stack");
+
+
+            }
+            Console.ReadKey();
