@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+/* Replace method program */
+
+            // Replace 2 or more digit pattern with a string.
+            Regex regex = new Regex(@"\d+");
+            string result = regex.Replace("cat 123 456", "bird");
+            Console.WriteLine("RESULT: {0}", result);
+            
+
+//my example
+            Regex regex = new Regex(@"\d+");
+            string replace = regex.Replace("I love 123, 456 are cute", "Dogs");
+            Console.WriteLine("Resulted string is: " + replace);
+            Console.ReadKey();
+}
+}
+}

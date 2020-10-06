@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+          /* IsMatch start and end*/
+            string test = "xxyy";
+
+            // Match the start of a string.
+            if (Regex.IsMatch(test, "^xx"))
+            {
+                Console.WriteLine("START MATCHES");
+            }
+
+            // Match the end of a string.
+            if (Regex.IsMatch(test, "yy$"))
+            {
+                Console.WriteLine("END MATCHES");
+            }
+
+            
+           //my example
+            string test = "sindhuja";
+            if(Regex.IsMatch(test,"^s"))
+            {
+               Console.WriteLine("pattern starting matched");
+            }
+            else
+                Console.WriteLine("pattern starting not matched");
+
+            if (Regex.IsMatch(test, "ja$"))
+            {
+                Console.WriteLine("pattern end matched");
+            }
+            else
+                Console.WriteLine("pattern ending not matched");
+	Console.Readkey();
+}
+}
+}

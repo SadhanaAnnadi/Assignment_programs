@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /* match,regex
+               // Step 1: create new Regex.
+        Regex regex = new Regex(@"\d+");
+
+        // Step 2: call Match on Regex instance.
+        Match match = regex.Match("a55a");
+
+        // Step 3: test for Success.
+        if (match.Success)
+        {
+            Console.WriteLine("MATCH VALUE: " + match.Value);
+        }
+
+
+
+        //my example
+
+            Regex example = new Regex(@"\d+");
+            Match match = example.Match("sindu8899");
+            if (match.Success)
+            {
+
+                Console.WriteLine("The match value of the digit is:" + match.Value);
+
+            }
+            else
+                Console.WriteLine("Match not found");
+          Console.Readkey();
+}
+}
+}

@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             /* regex.match program*/
+          
+        string input = "/content/alternate-1.aspx";
+
+   .  Match match = Regex.Match(input, @"content/([A-Za-z0-9\-]+)\.aspx$",
+            RegexOptions.IgnoreCase);
+         if (match.Success)
+        {
+            // Part 4: get the Group value and display it.
+            string key = match.Groups[1].Value;
+            Console.WriteLine(key);
+            }
+
+
+            //my exmple
+
+            string value = "Hello/Worldis2beautiful!";
+            Match mch = Regex.Match(value, @"Hello/([A-Za-z0-9!]+)",RegexOptions.IgnoreCase);
+            if(mch.Success)
+            {
+                Console.WriteLine("The matched pattern is " + mch.Groups[1].Value);
+	Console.Readkey();
+            }
+}
+}
+}

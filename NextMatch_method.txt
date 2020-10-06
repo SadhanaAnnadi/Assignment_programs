@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+ /* NextMatch method program*/
+            string value = "4 AND 5";
+
+            // Step 1: get first match.
+            Match match = Regex.Match(value, @"\d");
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+
+            // Step 2: get second match.
+            match = match.NextMatch();
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+
+
+            //my example
+            string value = "1999 and 2000";
+            Match mch = Regex.Match(value, @"\d+");
+            if(mch.Success)
+            {
+               Console.WriteLine("pattern matched and digits are: " + mch.Value);
+            }
+            mch = mch.NextMatch();
+            if(mch.Success)
+            {
+                Console.WriteLine("The second executed and the digits are: " + mch.Value);
+            }
+	Console.Readkey();
+}
+}
+}
