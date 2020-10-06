@@ -1,0 +1,44 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Dot Net 100 Perls";
+        Match match = Regex.Match(input, @"\d+");
+        if (match.Success)
+        {
+            int.TryParse(match.Value, out int number);
+            // Show that we have the numbers.
+            Console.WriteLine("NUMBERS: {0}, {1}", number, number + 1);
+        }
+    }
+}
+
+
+//my example
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "my dog is 5 years old";
+            Match match = Regex.Match(input, @"\d+");
+            if (match.Success)
+            {
+                int.TryParse(match.Value, out int number);
+                // Show that we have the numbers.
+                Console.WriteLine("NUMBERS: {0}, {1}", number, number + 1);
+            }
+Console.Readkey();
+}
+}
+}

@@ -1,0 +1,41 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        Match m = Regex.Match("123 Axxxxy", @"A.*y");
+        if (m.Success)
+        {
+            Console.WriteLine("Value  = " + m.Value);
+            Console.WriteLine("Length = " + m.Length);
+            Console.WriteLine("Index  = " + m.Index);
+        }
+    }
+}
+//my example
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Match m = Regex.Match("123456 HelloWorld", @"H.*d");
+            if (m.Success)
+            {
+                Console.WriteLine("Value  = " + m.Value);
+                Console.WriteLine("Length = " + m.Length);
+                Console.WriteLine("Index  = " + m.Index);
+            }
+Console.Readkey();
+}
+}
+}

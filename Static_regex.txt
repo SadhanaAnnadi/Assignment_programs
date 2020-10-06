@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+{
+/* Static regex class*/
+                    string input = "/content/alternate-1.aspx";
+
+                    // This calls the static method specified.
+                    Console.WriteLine(RegexUtil.MatchKey(input));
+
+
+                }
+            }
+
+            static class RegexUtil
+            {
+                static Regex _regex = new Regex(@"/content/([a-z0-9\-]+)\.aspx$");
+                /// <summary>
+                /// This returns the key that is matched within the input.
+                /// </summary>
+                static public string MatchKey(string input)
+                {
+                    Match match = _regex.Match(input.ToLower());
+                    if (match.Success)
+                    {
+                        return match.Groups[1].Value;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+
+
+
+   // my example
+namespace regularexp
+{
+    class Program
+    {
+        static void Main(string[] args)
+{
+            string input = "/Hello-class9/";
+            Console.WriteLine(Regexexp.MatchKey(input));
+            Console.ReadKey();
+        }
+    }
+    static class Regexexp
+    {
+        static Regex _regex = new Regex(@"/([a-z0-9-]+)");
+        /// <summary>
+        /// This returns the key that is matched within the input.
+        /// </summary>
+        static public string MatchKey(string input)
+        {
+            Match match = _regex.Match(input.ToLower());
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+}
