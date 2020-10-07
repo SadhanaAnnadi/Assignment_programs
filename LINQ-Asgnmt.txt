@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQ
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            List<Student> std = new List<Student>()
+            {
+                new Student(){StudentID=2,Studentname="Sindu",Age=22,BatchID=1,EmpId=101},
+                new Student(){StudentID = 3,Studentname="priya", Age = 25,BatchID =2,EmpId=102},
+                new Student(){StudentID = 4,Studentname="sruthi", Age = 18,BatchID =3,EmpId=103},
+                new Student(){StudentID = 5,Studentname="kavya", Age = 30,BatchID =4,EmpId=104},
+            };
+
+            List<Employee> emp = new List<Employee>()
+            {
+                new Employee(){EmpId=101,EmpName="Sindu",Salary=30000,Designation="HOD"},
+                new Employee(){EmpId=102,EmpName="Ravi",Salary=50000,Designation="Principal"},
+                new Employee(){EmpId=103,EmpName="Karthik",Salary=10000,Designation="clerk"},
+                new Employee(){EmpId=104,EmpName="kavya",Salary=25000,Designation="faculty"},
+                 new Employee(){EmpId=105,EmpName="Sandya",Salary=21000,Designation="faculty"}
+            };
+            //query1
+            var empname = from Employee e in emp where e.EmpId > 101 && e.Salary > 20000 select e.EmpName;//print empname whose salary is greater than 2000 and Empid>101
+            foreach (var name in empname)
+            {
+                Console.WriteLine("Name of Employees whose salary is greater than 2000 and Empid>101 is: "+name);
+            }
+
+
+            //query2
+            var name_desig = from e in emp where e.Designation=="Principal" select e.EmpName;
+            foreach (var name in name_desig)
+            {
+                Console.WriteLine("Name of the Employee whose designation is principal is: "+name);
+            }
+            //query3
+            var desig = from e in emp where e.Designation!="Principal" select e.EmpName;
+            foreach (var name in desig)
+            {
+                Console.WriteLine("Name of the Employees whose designation is not principal is: " + name);
+            }
+            //query4
+            var emp_id = from e in emp where e.Designation == "faculty" && e.Salary > 21000 select e.EmpId;
+            foreach (var id in emp_id)
+            {
+                Console.WriteLine("Employee id of the Employees whose salary is more than 21000 and designation is faculty are: " + id);
+            }
+            //query5
+            var sal_desc = from e in emp where e.Salary>10000 orderby e.EmpId descending select e.Salary;
+            foreach (var sal in sal_desc)
+            {
+                Console.WriteLine("Salary in descending order of Employee id are: "+sal);
+            }
+            //Query6
+            var join = from e in emp
+                       join Student s in std on e.EmpId equals s.EmpId where s.Age>18
+                       select new
+                       {
+                           e.EmpName,
+                           e.EmpId
+                       };
+            foreach (var j in join)
+            {
+                Console.WriteLine("inner join " + j);
+            }
+            //query 7
+            var leftjoin = from e in emp
+                       join Student s in std on e.EmpId equals s.EmpId into lj from s in lj.DefaultIfEmpty()
+                      // where s.Age > 18
+                       select new
+                       {
+                           e.EmpName,
+                           e.EmpId
+                       };
+            foreach (var j in leftjoin)
+            {
+                Console.WriteLine("left join " + j);
+            }
+            //query8
+            var sort = from e in emp where e.Salary > 10000 orderby e.Salary ascending  select e.EmpName;
+            foreach (var i in sort)
+            {
+                Console.WriteLine("sorted by salary in ascending " + i);
+            }
+            //query 9
+            var maxi = emp.Max(x=>x.Salary);
+
+            Console.WriteLine("Maximum salary: " +maxi);
+            //query 10
+            var grp = from e in emp group e by e.EmpId into sb orderby sb.Key select new { sb.Key, sb };
+            foreach (var g in grp)
+            {
+                Console.WriteLine("Empid= {0}", g.Key);
+            }
+
+            Console.ReadKey();
+        }
+        public class Employee
+        {
+            public int EmpId { get; set; }
+            public string EmpName { get; set; }
+            public int Salary { get; set; }
+            public string Designation { get; set; }
+        }
+            
+}
+}
