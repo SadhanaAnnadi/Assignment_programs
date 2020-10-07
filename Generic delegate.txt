@@ -1,0 +1,68 @@
+public delegate T add<T>(T param1, T param2); // generic delegate
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        add<int> sum = Sum;
+        Console.WriteLine(sum(10, 20));
+
+        add<string> con = Concat;
+        Console.WriteLine(conct("Hello ","World!!"));
+    }
+
+    public static int Sum(int val1, int val2)
+    {
+        return val1 + val2;
+    }
+
+    public static string Concat(string str1, string str2)
+    {
+        return str1 + str2;
+    }
+}
+
+
+//my example
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace delegate_exp
+{
+/* Generic Delegate*/
+    public delegate T Mydelegate<T>(T num1,T num2); //declaring a delegate 
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Mydelegate<int> del = new Mydelegate<int>(Myclass1.sample);
+            del.Invoke(45,20);
+            del =Myclass2.sample;
+           del.Invoke(200,100);
+            Console.ReadKey();
+        }
+    }
+
+    class Myclass1
+    {
+      public static int sample(int num1,int num2 )
+        {
+           Console.WriteLine("sum is: {0}", (num1 + num2));
+            return num1+num2;
+        }
+    }
+    class Myclass2
+    {
+       public static int sample(int num1,int num2 )
+        {
+            Console.WriteLine("sum is: {0}", (num1 - num2));
+            return num1-num2;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+public delegate void MyDelegate(string msg); //declaring a delegate
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        MyDelegate del = ClassA.MethodA;
+        InvokeDelegate(del);
+
+        del = ClassB.MethodB;
+        InvokeDelegate(del);
+
+        del = (string msg) => Console.WriteLine("Called lambda expression: " + msg);
+        InvokeDelegate(del);
+    }
+
+    static void InvokeDelegate(MyDelegate del) // MyDelegate type parameter
+    {
+        del("Hello World");
+    }
+}
+
+class ClassA
+{
+    static void MethodA(string message)
+    {
+        Console.WriteLine("Called ClassA.MethodA() with parameter: " + message);
+    }
+}
+
+class ClassB
+{
+    static void MethodB(string message)
+    {
+        Console.WriteLine("Called ClassB.MethodB() with parameter: " + message);
+    }
+}
+
+//my example
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace delegate_exp
+{/* passing delegate as a parameter*/
+    public delegate void Delegates(int a,int b); //declaring a delegate 
+   
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Delegates del =Program.multi;
+            InvokeDelegate(del);
+            del = Program.div;
+            InvokeDelegate(del);
+            
+            Console.ReadKey();
+        }
+        static void InvokeDelegate(Delegates del)
+        {
+            del(100, 10);
+        }
+
+        static void multi(int a, int b)
+        {
+            Console.WriteLine(a * b);
+        }
+        static void div(int a, int b)
+        {
+            Console.WriteLine(a/b);
+        }
+    
+}
+}
