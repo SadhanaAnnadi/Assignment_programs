@@ -1,0 +1,313 @@
+/*program of delegate with methods*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace func_action_predicate
+{
+    public delegate string HelloDelegate(string name);
+    public delegate int multiplyDelegate(int num1, int num2, int num3);
+    public delegate void AddDelegate(int num1,int num2,double num3);
+    public delegate void subDelegate(double num1,double num2);
+    public delegate bool checkLengthDelegate(string str);
+    public delegate bool checkvalueDelegate(int num1);
+
+    class Program
+    {
+        public static string Hello(string name)
+        {
+            return name;
+        }
+        public static int Multiply(int num1,int num2,int num3)
+        {
+            return num1*num2*num3;
+        }
+        public static void Add(int num1, int num2, double num3)
+        {
+            Console.WriteLine(num1+num2+num3);
+        }
+        public static void sub(double num1,double num2)
+        {
+            Console.WriteLine(num1-num2);
+        }
+        public static bool checkLength(string str)
+        {
+            if(str.Length>=3)
+                return true;
+            return false;
+        }
+        public static bool checkvalue(int num1)
+        {
+            if (num1<0)
+                return false;
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            /*method one delegate instantiation*/
+            HelloDelegate hd = new HelloDelegate(Hello);
+            string s = hd.Invoke("This is C# program");
+            Console.WriteLine(s);
+
+            /*method two delegate instantiation*/
+            multiplyDelegate md = new multiplyDelegate(Multiply);
+            int m = md.Invoke(12, 4, 13);
+            Console.WriteLine(m);
+
+            /*method three delegate instantiation*/
+            AddDelegate ad = new AddDelegate(Add);
+            ad.Invoke(45,68,1234.465);
+
+            /*method four delegate instantiation*/
+            subDelegate sd = new subDelegate(sub);
+            sd.Invoke(12345.6778,11898.3458);
+
+            /*method five delegate instantiation*/
+            checkLengthDelegate cld = new checkLengthDelegate(checkLength);
+            bool chk = cld.Invoke("Sindu");
+            Console.WriteLine(chk);
+
+            /*method six delegate instantiation*/
+            checkvalueDelegate cvd = new checkvalueDelegate(checkvalue);
+            bool check = cvd.Invoke(123);
+            Console.WriteLine(check);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+/* program without methods using Anonymous method*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace func_action_predicate
+{
+    public delegate string HelloDelegate(string name);
+    public delegate int multiplyDelegate(int num1, int num2, int num3);
+    public delegate void AddDelegate(int num1,int num2,double num3);
+    public delegate void subDelegate(double num1,double num2);
+    public delegate bool checkLengthDelegate(string str);
+    public delegate bool checkvalueDelegate(int num1);
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Anonymous method*/
+            HelloDelegate hd = delegate(string name)
+            {
+                return name;
+            };
+            string s = hd.Invoke("This is C# program");
+            Console.WriteLine(s);
+
+            /*Anonymous method*/
+            multiplyDelegate md = delegate (int num1, int num2, int num3)
+            {
+                return num1 * num2 * num3;
+            };
+            int m = md.Invoke(12, 4, 13);
+            Console.WriteLine(m);
+
+            /*Anonymous method*/
+            AddDelegate ad = delegate (int num1, int num2, double num3)
+            {
+                Console.WriteLine(num1 + num2 + num3);
+            };
+            ad.Invoke(45,68,1234.465);
+
+            /*Anonymous method*/
+            subDelegate sd = delegate (double num1, double num2)
+            {
+                Console.WriteLine(num1 - num2);
+            };
+            sd.Invoke(12345.6778,11898.3458);
+
+            /*Anonymous method*/
+            checkLengthDelegate cld = delegate (string str)
+            {
+                if (str.Length >= 3)
+                    return true;
+                return false;
+            };
+            bool chk = cld.Invoke("Sindu");
+            Console.WriteLine(chk);
+
+            /*Anonymous method*/
+            checkvalueDelegate cvd = delegate (int num1)
+            {
+                if (num1 < 0)
+                    return false;
+                return true;
+            };
+                bool check = cvd.Invoke(123);
+            Console.WriteLine(check);
+            Console.ReadKey();
+        }
+    }
+}
+
+/* Using Lambda Expression*/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace func_action_predicate
+{
+    public delegate string HelloDelegate(string name);
+    public delegate int multiplyDelegate(int num1, int num2, int num3);
+    public delegate void AddDelegate(int num1,int num2,double num3);
+    public delegate void subDelegate(double num1,double num2);
+    public delegate bool checkLengthDelegate(string str);
+    public delegate bool checkvalueDelegate(int num1);
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            HelloDelegate hd = name => //lamda symbol
+            {
+                return name;
+            };
+            string s = hd.Invoke("This is C# program");
+            Console.WriteLine(s);
+
+           
+            multiplyDelegate md = (num1,num2,num3)=>  //lamda symbol
+            {
+                return num1 * num2 * num3;
+            };
+            int m = md.Invoke(12, 4, 13);
+            Console.WriteLine(m);
+
+           
+            AddDelegate ad = (num1,num2,num3)=>   //lamda symbol
+            {
+                Console.WriteLine(num1 + num2 + num3);
+            };
+            ad.Invoke(45,68,1234.465);
+
+            
+            subDelegate sd = (num1,num2)=>   //lamda symbol
+            {
+                Console.WriteLine(num1 - num2);
+            };
+            sd.Invoke(12345.6778,11898.3458);
+
+           
+            checkLengthDelegate cld = str => //lamda symbol
+            {
+                if (str.Length >= 3)
+                    return true;
+                return false;
+            };
+            bool chk = cld.Invoke("Sindu");
+            Console.WriteLine(chk);
+
+            /*Anonymous method*/
+            checkvalueDelegate cvd = num1=> //lamda symbol
+            {
+                if (num1 < 0)
+                    return false;
+                return true;
+            };
+                bool check = cvd.Invoke(123);
+            Console.WriteLine(check);
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+/*program using func, Action, Predicate delegates*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace func_action_predicate
+{
+    public delegate string HelloDelegate(string name);
+    public delegate int multiplyDelegate(int num1, int num2, int num3);
+    public delegate void AddDelegate(int num1,int num2,double num3);
+    public delegate void subDelegate(double num1,double num2);
+    public delegate bool checkLengthDelegate(string str);
+    public delegate bool checkvalueDelegate(int num1);
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*using func delegate*/
+            Func<string,string> hd = name=>
+            {
+                return name;
+            };
+            string s = hd.Invoke("This is C# program");
+            Console.WriteLine(s);
+
+            /*using func delegate*/
+            Func<int,int,int,int>md = (num1,num2,num3)=>
+            {
+                return num1 * num2 * num3;
+            };
+            int m = md.Invoke(12, 4, 13);
+            Console.WriteLine(m);
+
+            /*using Action delegate*/
+            Action<int,int,double> ad = (num1, num2, num3) =>
+            {
+                Console.WriteLine(num1 + num2 + num3);
+            };
+            ad.Invoke(45,68,1234.465);
+
+            /*using Action delegate*/
+            Action<double, double> sd = (num1, num2) =>
+            {
+                Console.WriteLine(num1 - num2);
+            };
+            sd.Invoke(12345.6778,11898.3458);
+
+            /*Using predicate delegate*/
+            Predicate<string> cld = str=>
+            {
+                if (str.Length >= 3)
+                    return true;
+                return false;
+            };
+            bool chk = cld.Invoke("Sindu");
+            Console.WriteLine(chk);
+
+            /*Using predicate delegate*/
+            Predicate<int> cvd = num1=>
+            {
+                if (num1 < 0)
+                    return false;
+                return true;
+            };
+                bool check = cvd.Invoke(123);
+            Console.WriteLine(check);
+            Console.ReadKey();
+        }
+    }
+}
+
+
+

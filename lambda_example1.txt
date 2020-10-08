@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lambdaexpression
+{
+    public delegate string GreetingDelegate(string str);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> num = new List<int> { 12, 24, 36, 48, 60, 72, 84, 96, 108, 120 };
+            Console.WriteLine("The elements in list are: ");
+            foreach(var value in num)
+            {
+                Console.Write(value+" ");
+            }
+            Console.WriteLine("\n");
+            var square = num.Select(x => x * x);
+            Console.WriteLine("The square values are: ");
+            foreach(var i in square)
+            {
+                Console.Write(i + " ");
+            }
+            Console.ReadKey();
+            }
+}
+}

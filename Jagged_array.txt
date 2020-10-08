@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace jagged_array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+/*jagged array*/
+           int[][] jagarr = new int[4][];
+            jagarr[0] = new int[2] { 2, 4 };
+            jagarr[1] = new int[4] { 2, 4,5,6 };
+            jagarr[2] = new int[3] { 2, 4,3 };
+            jagarr[3] = new int[1] { 10 };
+            for(int i=0;i<jagarr.Length;i++)
+            {
+                Console.WriteLine("Elements of ({0}):", i);
+                for (int j=0; j < jagarr[i].Length; j++)
+                {
+                    Console.WriteLine(jagarr[i][j]);
+                }
+
+            }
+            Console.ReadKey();
+        }
+    }
+}
