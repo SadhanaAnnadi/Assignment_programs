@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnonymousMethod
+{
+    public delegate string GreetingDelegate(string str);
+    public delegate string GreetingDelegate1(string str);
+    class program
+    {
+        static void Main(string[] args)
+        {
+
+            GreetingDelegate obj = delegate (string name)
+              {
+                  return "Hello " + name + " Goodmorning";
+
+              };
+            GreetingDelegate1 obj1 = delegate (string name)
+              {
+                  return "this is" + name + "method";
+              };
+            string strr = obj1.Invoke("Anonymous");
+            string str = obj.Invoke("girls");
+            Console.WriteLine(str);
+            Console.WriteLine(strr);
+            Console.ReadKey();
+        }
+    }
+   
+   
+}

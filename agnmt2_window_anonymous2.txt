@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Anonymous_window
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button();//reference to button
+            b.Text = "Click Me";//text on the button
+            b.Size = new Size(100,50);//size for the button
+            b.Location = new Point(220, 150);//location for button to be placed.
+            this.Controls.Add(b);//controling mechanism of button to go to center
+            b.Click += new EventHandler(button2_Click);
+            b.Click += new EventHandler(button3_Click);
+        }
+        private void button2_Click(object sender1, EventArgs e1)
+        {
+            MessageBox.Show("Programming is fun");
+        }
+        private void button3_Click(object sender2, EventArgs e2)
+        {
+            MessageBox.Show("This is printing");
+        }
+    }
+}
+
+// Anonymous Method
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Anonymous_window
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button();//reference to button
+            b.Text = "Click Me";//text on the button
+            b.Size = new Size(100,50);//size for the button
+            b.Location = new Point(220, 150);//location for button to be placed.
+            this.Controls.Add(b);//controling mechanism of button to go to center
+            /* Anonymus Method*/
+            b.Click+=  delegate (object sender1, EventArgs e1)
+              {
+                  MessageBox.Show("Programming is fun");
+              };
+            b.Click += delegate (object sender2, EventArgs e2)
+            {
+                MessageBox.Show("This is printing");
+            };
+}
+}
+}
