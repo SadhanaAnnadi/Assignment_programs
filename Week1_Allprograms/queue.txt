@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AllPrograms
+{
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            Queue<string> q = new Queue<string>();
+            q.Enqueue("Hello");
+            Console.WriteLine(q.Count());
+            q.Enqueue("This");
+            Console.WriteLine(q.Count());
+            q.Enqueue("is");
+            Console.WriteLine(q.Count());
+            q.Enqueue("sindu");
+            Console.WriteLine(q.Count());
+            q.Enqueue("How");
+            Console.WriteLine(q.Count());
+            q.Enqueue("are");
+            Console.WriteLine(q.Count());
+            q.Enqueue("You");
+            Console.WriteLine(q.Count());
+            foreach (string s in q)
+            {
+                Console.WriteLine("the elements in string are: " + s);
+            }
+            Console.WriteLine("The element removed is: " + q.Dequeue());
+            Console.WriteLine("the peek element: " + q.Peek());
+            Console.WriteLine("Total elements in queue after dequeue: " + q.Count());
+            Console.ReadKey();
+        }
+    }
+}

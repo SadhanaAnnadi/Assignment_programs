@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+    public delegate double rectangleDelegate(double height, double width);
+    public delegate void squareDelegate(int side);
+    public delegate bool checkDelegate(int height, int width);
+    class Program
+    { 
+       
+
+        static void Main(string[] args)
+        {
+            //creating func delegate
+            Func<double, double, double> obj =(height,width)=>
+                 {
+            return (width * height);
+        };
+            double result = obj.Invoke(17.3, 13.56);
+            Console.WriteLine(result);
+            //creating Action delegate
+            Action<int> obj1 = s =>
+               {
+                   Console.WriteLine("area of square: {0} " + (side * side));
+               };
+            obj1.Invoke(25);
+            //creating predicate delegate
+            Predicate<int> obj2 = (height) =>
+                {
+
+                    if (height<5)
+                    {
+                        return false;
+                    }
+                    return true;
+
+                };
+            bool check = obj2.Invoke(6);
+            Console.WriteLine(check);
+
+        Console.ReadKey();
+        }
+    }
+}

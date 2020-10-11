@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+// creating delegate
+    public delegate void rectangleDelegate(double height, double width);
+    class Program
+    {
+        public void area(double height, double width)
+        {
+            Console.WriteLine("Area of rectangle: {0}", (width * height));
+        }
+        public void perimeter(double height, double width)
+        {
+            Console.WriteLine("Perimeter of rectangle: {0} ", 2 * (width + height));
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program();//object creation of clss
+            rectangleDelegate recde = new rectangleDelegate(p.area);//giving method as parameter to delegate
+            recde += p.perimeter;//Adding another method to delegate.
+            recde.Invoke(5.5, 4.3);//providing values to the delegate.
+            Console.WriteLine("");
+            recde.Invoke(10.4, 6.4);
+
+            Console.ReadKey();
+        }
+    }
+}

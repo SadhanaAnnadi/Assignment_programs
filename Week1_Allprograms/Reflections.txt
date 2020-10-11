@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+    
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            Type t = typeof(string);
+            string i = "Hello";
+            System.Type type = i.GetType();
+            Console.WriteLine(type);
+            System.Reflection.Assembly info = typeof(System.String).Assembly;
+            Console.WriteLine(info);
+            Console.ReadKey();
+        }
+    }
+}

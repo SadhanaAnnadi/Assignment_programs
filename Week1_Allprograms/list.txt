@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AllPrograms
+{
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            List<string> list = new List<string>();//creating list
+            //Adding elements in to list
+            list.Add("Hello");
+            list.Add("this");
+            list.Add("is");
+            list.Add("sindu");
+            list.Add("How");
+            list.Add("are");
+            list.Add("you");
+            Console.WriteLine("count of list are: " + list.Count());//finding count of elements in list
+            Console.WriteLine("Capacity of list is: " + list.Capacity);//finding the capacity of list to store the elements.
+            foreach(var l1 in list)//display elements
+            {
+                Console.WriteLine("elements in list are: " + l1);
+            }
+            Console.ReadKey();
+        }
+    }
+}

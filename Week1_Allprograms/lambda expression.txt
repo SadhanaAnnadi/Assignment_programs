@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+    public delegate void rectangleDelegate(double height, double width);
+    class Program
+    { 
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+            //lambda expression for given delegate
+            rectangleDelegate recde = (height,width)=>
+            {
+                Console.WriteLine("Area of rectangle: {0}", (width * height));
+            };
+            //adding another lambda value
+            recde += (height,width)=>
+            {
+                Console.WriteLine("Perimeter of rectangle: {0} ", 2 * (width + height));
+            };
+            recde.Invoke(5.5, 4.3);
+            Console.WriteLine("");
+            recde.Invoke(10.4, 6.4);
+
+            Console.ReadKey();
+        }
+    }
+}

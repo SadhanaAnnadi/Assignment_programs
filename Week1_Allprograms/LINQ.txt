@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+    
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            List<int> intCollection = new List<int>()
+            {
+                1,2,3,2,3,4,4,5,6,3,4,5
+            };
+            //Using Query Syntax for distinct elements from list
+            var QS = (from num in intCollection
+                      select num).Distinct();
+            foreach (var item in QS)
+            {
+                Console.WriteLine(item);
+            }
+            /*concatinate method*/
+            List<int> sequence1 = new List<int> { 1, 2, 3, 4 };
+            List<int> sequence2 = new List<int> { 2, 4, 6, 8 };
+            var result = sequence1.Concat(sequence2);//concatinating both lists
+            Console.Write("elements after concatiation: ");
+            foreach (var item in result)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("");
+            /* Aggregate function sum*/
+            int[] intNumbers = new int[] { 10, 30, 50, 40, 60, 20, 70, 90, 80, 100 };
+         
+            //Using Query Syntax
+            int QSTotal = (from num in intNumbers
+                           select num).Sum();
+            Console.WriteLine("Sum = " + QSTotal);
+
+
+            Console.ReadKey();
+        }
+    }
+}

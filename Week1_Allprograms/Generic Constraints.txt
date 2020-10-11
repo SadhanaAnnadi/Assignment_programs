@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace AllPrograms
+{
+    class ruby<T> where T:IDisposable
+    {
+        public void test1()
+        {
+            Console.WriteLine("example");
+        }
+    }
+    class Myclass<T> where T :struct
+    {
+        public void test2()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+    class read <T> where T:class,new()
+    {
+        public void test3()
+        {
+            Console.WriteLine("welcome");
+        }
+    }
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            ruby<DataTable> r = new ruby<DataTable>();
+            Myclass<int> cls = new Myclass<int>();
+            read<Program> test = new read<Program>();
+            r.test1();
+            cls.test2();
+            test.test3();
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AllPrograms
+{
+    class Program
+    {
+        int top=-1;
+        static int  max = 100;
+        int[] stack = new int[max];
+
+//push operation creation for stack
+        public bool push(int data)
+        {
+            if (top >= max)
+            {
+                Console.WriteLine("stack overflow");
+                return false;
+            }
+            stack[++top] = data;
+            return true;
+        }
+
+// creation of pop method for stack
+        public int pop()
+        {
+            if (top < 0)
+            {
+                Console.WriteLine("stack underflow");
+                return 0;
+            }
+            else
+            {
+                int value = stack[top--];
+                return value;
+            }
+        }
+
+// method to identify peek element in stack 
+        public void Peek()
+        {
+            if(top<0)
+            {
+                Console.WriteLine("stack underflow");
+            }
+            else
+            {
+                Console.WriteLine("The peek element is: " + stack[top]);
+            }
+        }
+
+//Displaying stack elements present in it.
+        public void Display()
+        {
+            if(top<0)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            else
+            {
+                Console.WriteLine("elements are:");
+                for (int i = top; i >= 0; i--)
+                    Console.WriteLine(stack[i]);
+            }
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+
+//pushing elements in to stack
+           p.push(10);
+            p.push(15);
+            p.push(20);
+            p.push(30);
+            p.push(25);
+            p.push(35);
+            p.push(40);
+            p.push(45);
+            p.push(50);
+            p.Peek();//peek element
+            Console.WriteLine("the element poped from stack is: " + p.pop());
+            p.Display();
+            Console.ReadKey();
+           
+        }
+    }
+}

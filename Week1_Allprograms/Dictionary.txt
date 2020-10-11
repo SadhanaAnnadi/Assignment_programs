@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AllPrograms
+{
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+          Dictionary<int, string> My_dict = new Dictionary<int, string>();
+            My_dict.Add(101, "pranathi");
+            My_dict.Add(102, "sravani");
+            My_dict.Add(103, "sindu");
+            My_dict.Add(104, "shiva");
+            My_dict.Add(105, "sravan");
+            foreach(var val in My_dict)
+            {
+                Console.WriteLine("{0} {1}", val.Key, val.Value);
+            }
+            Console.WriteLine("count of elements= " + My_dict.Count());
+            Console.WriteLine("removed element from dictionary " + My_dict.Remove(103));
+            Console.WriteLine("count of elements after deletion= " + My_dict.Count());
+            Console.ReadKey();
+        }
+    }
+}
