@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Threading;
+
+namespace AllPrograms
+{
+        class Program
+        {
+        public static void work1()
+        {
+
+            Console.WriteLine("T1 thread is working..");
+        }
+        public static void work2()
+        {
+
+            Console.WriteLine("T2 thread is working..");
+        }
+        public static void work3()
+        {
+
+            Console.WriteLine("T3 thread is working..");
+        }
+        public static void work4()
+        {
+
+            Console.WriteLine("T4 thread is working..");
+        }
+        public static void work5()
+        {
+
+            Console.WriteLine("T5 thread is working..");
+        }
+
+        static void Main(string[] args)
+        {
+            // Creating and initializing threads 
+            Thread T1 = new Thread(work1);
+            Thread T2 = new Thread(work2);
+            Thread T3 = new Thread(work3);
+            Thread T4 = new Thread(work4);
+            Thread T5 = new Thread(work5);
+
+            // Set the priority of threads 
+            // Here T2 thread executes first  
+            // because the Priority of T2 is 
+            // highest as compare to T1 thread 
+            T1.Priority = ThreadPriority.Lowest;
+            T2.Priority = ThreadPriority.Highest;
+            T3.Priority = ThreadPriority.BelowNormal;
+            T4.Priority = ThreadPriority.AboveNormal;
+            T5.Priority = ThreadPriority.Normal;
+            T1.Start();
+            T2.Start(); T3.Start(); 
+            T4.Start(); T5.Start();
+            T1.Join(); T2.Join(); T3.Join(); 
+            T4.Join(); T5.Join();
+
+
+            Console.ReadKey();
+        }
+        }
+    }

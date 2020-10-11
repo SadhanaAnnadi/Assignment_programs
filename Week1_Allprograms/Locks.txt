@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Threading;
+
+namespace AllPrograms
+{
+        class Program
+        {
+            public void display()
+            {
+                lock (this)//It locks one thread when another thtread is under execution
+                {
+                    Console.WriteLine("csharp is an");
+                    Thread.Sleep(5000);//thread sleeps for 5 secs
+                    Console.WriteLine("Object oriented programming");
+                }
+            }
+        public void display1()
+        {
+            lock (this)//It locks one thread when another thtread is under execution
+            {
+                Console.WriteLine("Hello");
+                Thread.Sleep(5000);//thread sleeps for 5 secs
+                Console.WriteLine("This is c# programming");
+            }
+        }
+
+
+        static void Main(string[] args)
+            {
+                Program p = new Program();
+               
+                /* Binding the threads objects with the method */
+                Thread T1 = new Thread(p.display);
+                Thread T2 = new Thread(p.display);
+                Thread T3 = new Thread(p.display1);
+                Thread T4 = new Thread(p.display1);
+                T1.Start(); T2.Start(); T3.Start(); T4.Start();
+                T1.Join(); T2.Join(); T3.Join(); T4.Join();
+                Console.ReadKey();
+            }
+        }
+    }
