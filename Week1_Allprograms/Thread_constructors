@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Threading;
+
+namespace AllPrograms
+{
+   
+    class Program
+    { 
+        //threadstart constructor
+      static void Thread1()
+        {
+            for(int i=1;i<15;i++)
+            {
+                Console.WriteLine("Thread 1 " + i);
+            }
+        }
+        //parameterized thread constructor
+        static void test(object max)//it accepts only object values
+        {
+            int num = Convert.ToInt32(max);//converting from object data type to integer
+            for(int i=1;i<num;i++)
+            {
+                Console.WriteLine("Thread 2 " + i);
+            }
+            Console.WriteLine(max);
+        }
+
+        static void Main(string[] args)
+        {
+            //object creation for parameterized constructor
+            ParameterizedThreadStart obj1 = new ParameterizedThreadStart(test);
+            Thread T1 = new Thread(obj1);
+            ThreadStart obj = new ThreadStart(Thread1);
+            Thread T = new Thread(obj);
+            T.Start();T1.Start(15);
+        Console.ReadKey();
+        }
+    }
+}
