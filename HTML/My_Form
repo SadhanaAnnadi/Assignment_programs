@@ -1,0 +1,83 @@
+HTML CODE:
+
+<!DOCTYPE html>
+<div>
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Mystylesheet.css" />
+
+        <meta charset="utf-8" />
+        <title>My HTML Page</title>
+    </head>
+    <body>
+        <form action="">
+            <div class="container">
+                First Name <input type="text" name="fname" placeholder="firstname" /> <br />
+                Last Name  <input type="text" name="lname" placeholder="lastname" /><br />
+                Mobile Number <input type="text" name="phno" placeholder="mobilenumber" /> <br />
+                Email  <input type="text" name="email" placeholder="Enter emailid" /><br />
+                Password  <input type="password" name="pswd" placeholder="Enter password" /><br />
+                <input type="radio" name="radio1" value="male" /> Male
+                <input type="radio" name="radio2" value="Female" /> Female <br /><br />
+                <input type="checkbox" name="checkbox1" checked="checked" />Graduated
+                <input type="checkbox" name="checkbox2" /> Not Graduated<br />
+                <hr />
+                <div class=" submit">
+                    <input type="submit" class="submitted" value="submit" />
+                </div>
+            </div>
+            <hr />
+            <video src="project.mp4.mp4" controls ></video>
+
+
+        </form>
+        <div>
+            <img src="mydog.jpeg" width="500">
+        </div>
+
+    </body>
+</html>
+</div>
+
+
+CSS CODE:
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 50px 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+body {
+    font-family: sans-serif;
+    background-color: white;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    padding: 16px;
+    background-color: white;
+}
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+.submitted{
+    background-color: darkgreen;
+    color: white;
+    padding: 16px 20px;
+    margin:8px,50px;
+    width:100%;
+   
+    border: none;
+    cursor: pointer;
+    opacity:0.9;
+}
+.submit{
+    padding: 16px;
+    background-color:white;
+}
