@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function addition() {
+            var a = Number( document.Arithmetic.text1.value);
+            var b =  Number(document.Arithmetic.text2.value);
+            var result = a + b;
+            document.write("Sum of two numbers is: "+result);
+        }
+        function multiplication() {
+            var a =Number( document.Arithmetic.text1.value);
+            var b = Number(document.Arithmetic.text2.value);
+            var result = a * b;
+            document.write("Multiplication of two numbers is: "+result);
+        }
+        function substraction() {
+            var a = Number(document.Arithmetic.text1.value);
+            var b = Number( document.Arithmetic.text2.value);
+            var result = a - b;
+            document.write("Substraction of two numbers is: "+result);
+        }
+        function division() {
+            var a = Number( document.Arithmetic.text1.value);
+            var b = Number( document.Arithmetic.text2.value);
+            var result = a / b;
+            document.write("Division of two numbers is: "+result);
+        }
+    </script>
+    <form action="" name="Arithmetic">
+        Number1<input id="1" type="text" name="text1" /><br /><br />
+        Number2<input id="2" type="text" name="text2" /><br /><br />
+        <button onclick="addition()">Add</button>
+        <button onclick="multiplication()">Multiply</button>
+        <button onclick="substraction()">Substract</button>
+        <button onclick="division()">Divide</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        
+        function mult() {
+            var a = document.multiply.text1.value;
+            var b = document.multiply.text2.value;
+            for (var i =1; i <= b; i++) {
+                var result = a*i;
+                document.write(a + "*" + i + "=" + result);
+                document.write("<br/>");
+            }
+        }
+    </script>
+    <form action="" name="multiply" onsubmit="mult()">
+    Enter the value <input id="1" type="text" name="text1" /><br />
+
+    Enter the limit<input  id="limit" type="text" name="text2" /><br />
+        <input type="submit" value="submit" />
+    </form>
+
+</body>
+</html>
