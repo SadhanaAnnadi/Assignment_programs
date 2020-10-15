@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function nextpage() {
+            window.open("http://localhost:50831/Quizz_html.html?q1=a&q2=b&q3=a&q4=a&q5=b");
+        }
+    </script>
+    <form action="firstpage.html" method="get">
+        Name: <input type="text" name="text1"placeholder="Enter your name" /><br/>
+        UserName:<input type="text" name="text2" placeholder="Enter Username" /><br />
+        Password:<input type="password" name="psw" placeholder="Enter password" /><br />
+        <button onclick="nextpage()"> Start Quiz</button>
+
+      
+    </form>
+
+</body>
+</html>
