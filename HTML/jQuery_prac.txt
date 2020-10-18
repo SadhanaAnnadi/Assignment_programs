@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#h").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#show").click(function () {
+                $("#h").show();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#p1").text("Hello world");
+                alert($("#p1").text());
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#p2").append("<b> Appended text</b>");
+                $("#p2").prepend("<b>prepend text</b>");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h2").before("<b>before</b>");
+            $("h2").after("<b>After</b>");
+            $("#btn2").click(function () {
+                $("#h1").remove();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                $("#h2").empty();
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#para").addClass("x");
+            });
+
+        });
+    </script>
+    <style>
+        .x{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1"> This is paragraph</p>
+    <p id="p2"> paragraph to append</p>
+    <h1 id="h1">This is to be removed</h1>
+    <div id="h2" style="background-color:bisque"> <h2>This is empty</h2></div>
+
+    <h1 id="h">This is h1</h1>
+    <h2>This is h2</h2>
+    <p id="para">hello</p>
+
+    <button>Click to hide h1</button>
+    <button id="b1">to add css</button>
+    <button id="show">Click to show h1</button>
+    <button id="btn">click to set text</button>
+    <button id="btn1">click to append</button>
+    <button id="btn2">click to remove</button>
+    <button id="btn3">click to empty</button>
+</body>
+</html>
