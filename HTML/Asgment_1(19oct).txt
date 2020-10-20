@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Assignment</title>
+</head>
+<body>
+    <button id="btn1" onclick="diable1()"> Button1 </button>
+    <button id="btn2" onclick="diable2()"> Button2 </button>
+    <button id="btn3" onclick="diable3()"> Button3 </button>
+    <button id="btn4" onclick="diable4()"> Button4 </button>
+    <script>
+        function diable1() {
+            document.getElementById("btn1").disabled = true;
+            alert("button 1 disabled");
+        }
+        function diable2() {
+            document.getElementById("btn2").disabled = true;
+            alert("button 2 disabled");
+        }
+        function diable3() {
+            document.getElementById("btn3").disabled = true;
+            alert("button 3 disabled");
+        }
+        function diable4() {
+            document.getElementById("btn4").disabled = true;
+            alert("button 4 disabled");
+        }
+    </script>
+
+</body>
+</html>

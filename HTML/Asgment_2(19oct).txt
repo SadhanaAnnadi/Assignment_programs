@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Assignment</title>
+    <style>
+        .change{
+            border:double;
+            font-size:50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style:italic;
+            color:antiquewhite;
+            background-color:blue;
+        }
+        .modify {
+            border: dotted;
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: initial;
+            color: #ffffff;
+            background-color: #ff6a00;
+        }
+        .next {
+            border:dashed;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style:normal;
+            color:#00ffff;
+            background-color: #808080;
+        }
+        .css {
+            border:groove;
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style:inherit;
+            color:#808080;
+            background-color:#ff00dc;
+        }
+        .mdy {
+            border:hidden;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style:oblique;
+            color:#ff0000;
+            background-color:antiquewhite;
+        }
+
+        
+    </style>
+</head>
+<body>
+<script>
+function color() {
+            document.getElementById("btn5").disabled = true;
+            var element = document.getElementById("one");
+            element.classList.add("change");
+
+
+        }
+        function color1() {
+            document.getElementById("btn6").disabled = true;
+            var element = document.getElementById("two");
+            element.classList.add("modify");
+
+
+        }
+        function color2() {
+            document.getElementById("btn7").disabled = true;
+            var element = document.getElementById("three");
+            element.classList.add("next");
+
+
+        }
+        function color3() {
+            document.getElementById("btn8").disabled = true;
+            var element = document.getElementById("four");
+            element.classList.add("css");
+
+
+        }
+        function color4() {
+            document.getElementById("btn9").disabled = true;
+            var element = document.getElementById("five");
+            element.classList.add("mdy");
+
+
+        }
+    </script>
+    <button id="btn5" onclick="color()">Css for h1</button>
+    <button id="btn6" onclick="color1()">Css for h2</button>
+    <button id="btn7" onclick="color2()">Css for h3</button>
+    <button id="btn8" onclick="color3()">Css for h4</button>
+    <button id="btn9" onclick="color4()">Css for h5</button>
+    <h1 id="one"> Hello World</h1>
+    <h2 id="two">This is javascript</h2>
+    <h3 id="three">Programming is fun</h3>
+    <h4 id="four">This is crazy</h4>
+    <h5 id="five"> I love to dance</h5>
+
+</body>
+</html>

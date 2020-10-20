@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>All Programs examples</title>
+</head>
+<body>
+    <!-- buttons for displaying date and text and for multiple events on single button-->
+
+    <button id="btn1"> click to get date</button>
+    <button id="btn2"> click to get text</button>
+    <button id="btn3"> multiple events</button><br /><br />
+
+    <!-- buttons and paragraph for parameter passing DOM objects-->
+
+    <button id="btn4">multiply 2 numbers</button>
+    <button id="btn5">Add 2 numbers</button>
+    <button id="btn6">substract 2 numbers</button>
+    <button id="btn7">divide 2 numbers</button>
+    <button id="btn8">modulous 2 numbers</button>
+    <p id="p5"></p>
+
+    <!-- paragraphs for displaying date,text-->
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <p id="p3">This is window object</p>
+
+    <!-- div for many mouse events on one element-->
+
+    <div id="d1">
+        <p id="p4">This is magic paragraph please try it</p>
+        <p id="p6" style="font-size:large">colour magic with mouse</p>
+    </div>
+
+
+    <!-- javascript code for displaying date and and text on button click-->
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", displaydate);
+        function displaydate() {
+            document.getElementById("p1").innerHTML = Date();
+        }
+        document.getElementById("btn2").addEventListener("click", displaytext);
+        function displaytext() {
+            document.getElementById("p2").innerHTML = "This is event handler";
+        }
+        window.addEventListener("resize", function () {
+            document.getElementById("p3");
+        });
+    </script>
+
+    <!-- javascript code for many  mouse event handlers and click events on single element-->
+
+    <script>
+        var x = document.getElementById("btn3");
+        x.addEventListener("click", v1);
+        x.addEventListener("click", v2);
+        x.addEventListener("click", v3);
+        function v1() {
+            alert("we are intellegent");
+            console.log("we are intellegent")
+        }
+        function v2() {
+            alert("Event listener");
+            console.log("Event listener");
+        }
+        function v3() {
+            alert("we are good to go");
+            console.log("we are good to go");
+        }
+        var y = document.getElementById("d1");
+        y.addEventListener("mouseup", m1);
+        y.addEventListener("mousedown", m2);
+        y.addEventListener("mouseover", m3);
+        y.addEventListener("mouseout", m4);
+        function m1() {
+
+            document.getElementById("p6").style.color = "yellow";
+
+        }
+        function m2() {
+            document.getElementById("p6").style.color = "pink";
+        }
+
+        function m3() {
+            document.getElementById("p4").style.fontSize = "50px";
+        }
+        function m4() {
+            document.getElementById("p4").style.fontSize = "20px";
+        }
+    </script>
+
+    <!-- javascript code for passing parameters for DOM object-->
+
+    <script>
+        var num1 = 30;
+        var num2 = 40;
+        document.getElementById("btn4").addEventListener("click", function () {
+            multi(num1, num2);
+        });
+        function multi(a, b) {
+            var result = a * b;
+            document.getElementById("p5").innerHTML = result;
+        }
+        document.getElementById("btn5").addEventListener("click", function () {
+            Add(num1, num2);
+        });
+        function Add(x, y) {
+            var result = x + y;
+            document.getElementById("p5").innerHTML = result;
+        }
+        document.getElementById("btn6").addEventListener("click", function () {
+            sub(num1, num2);
+        });
+        function sub(a, b) {
+            var result = a - b;
+            document.getElementById("p5").innerHTML = result;
+        }
+        document.getElementById("btn7").addEventListener("click", function () {
+            div(num1, num2);
+        });
+        function div(a, b) {
+            var result = a / b;
+            document.getElementById("p5").innerHTML = result;
+        }
+        document.getElementById("btn8").addEventListener("click", function () {
+            mod(num1, num2);
+        });
+        function mod(a, b) {
+            var result = a % b;
+            document.getElementById("p5").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
