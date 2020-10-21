@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Jquery Assignment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a[href$='.com']").css("background-color", "violet");
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $("#l1").attr('target', '_blank');
+
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("tr:even").css("background-color", "pink");
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("tr:odd").css("background-color", "yellow");
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(":button").css("background-color", "green");
+        });
+
+    </script>
+</head>
+<body>
+    <a id="l1" href="http://www.google.com">Google.com</a>
+    <a id="l2"href="http://www.wikipedia.org">wikipedia.org</a><br /><br />
+
+    <table border="1">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Phonenumber</th>
+        </tr>
+        <tr>
+            <td>Sadhana</td>
+            <td>Annadi</td>
+            <td>8919870691</td>
+        </tr>
+        <tr>
+            <td>Sindu</td>
+            <td>priya</td>
+            <td>8919562441</td>
+        </tr>
+    </table><br /><br />
+    <form action="">
+        <button>my button</button>
+        <input type="button" value="another button" /><br /><br />
+        <input type="submit" value="submit" />
+    </form>
+    </body>
+</html>
