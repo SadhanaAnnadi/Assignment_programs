@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("h2.intro").hide();
+
+                $("h1.intro").hide();
+
+            });
+            $("p").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h3").dblclick(function () {
+                $(this).hide();
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#enter").mouseenter(function () {
+                alert("mouse entered on your mouse");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".enter1").mouseenter(function () {
+                alert("you went to the place of disapper paragraph");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#leave").mouseleave(function () {
+                alert("mouse left");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "green");
+            });
+            $("input").blur(function () {
+                $(this).css("background-color", "red");
+            });
+
+        });
+
+    </script>
+    
+</head>
+<body>
+    <p id="enter">my name is sadhana</p>
+
+    <button>Click to hide h1</button>
+    <h1 class="intro">hello</h1>
+    <h2>this</h2>
+    <h2 class="intro">is</h2>
+    <h3>why is</h3>
+    <p id="leave">mouse came and left</p>
+    <h4 class="intro">no this is not</h4>
+    <p class="enter1">i will disapper when you click me</p>
+    Name: <input type="text" name="fullname" />
+    Email: <input type="text" name="email" />
+   
+    
+
+</body>
+</html>
