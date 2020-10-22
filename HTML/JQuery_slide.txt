@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery sliding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown(3000);
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip1").click(function () {
+                $("#panel1").slideDown(3000);
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip2").click(function () {
+                $("#panel2").slideUp();
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip3").click(function () {
+                $("#panel3").slideToggle();
+            });
+
+        });
+    </script>
+    <style>
+        #flip, #panel {
+            background-color: bisque;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <style>
+        #flip1, #panel1 {
+            background-color: chocolate;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel1 {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <style>
+        #flip2, #panel2 {
+            background-color: brown;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel2 {
+            padding: 50px;
+            
+        }
+    </style>
+    <style>
+        #flip3, #panel3 {
+            background-color: crimson;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel3 {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Programming is fun</div>
+
+    <div id="flip1">An0ther example of slide</div>
+    <div id="panel1">Programming is really fun</div>
+
+    <div id="flip2">An0ther example of slide up</div>
+    <div id="panel2">This is crazy</div>
+
+    <div id="flip3">An0ther example of slide up</div>
+    <div id="panel3">This is crazy</div>
+</body>
+</html>
