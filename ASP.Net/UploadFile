@@ -1,0 +1,39 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadFile.aspx.cs" Inherits="ASPWebapplication_Example.UploadFile" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> File Uploading</title>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h4> Provide the below information</h4>
+            <table >
+                <tr>
+                    <td>
+                        <asp:Label ID="label1" runat="server" Text="UserName"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="Txtbox1" runat="server" Height="27px" style="margin-left: 55px" Width="204px" ></asp:TextBox><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                <td >
+                    <asp:Label ID="label2" runat="server" Text="Upload a file"></asp:Label>
+                </td>
+                <td>
+                    <asp:FileUpload ID="fileupload1" runat="server" style="margin-left: 55px"  />
+                </td>
+                    </tr>
+            </table>
+            
+            
+            
+            
+        </div>
+    </form>
+</body>
+</html>
