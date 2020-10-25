@@ -1,0 +1,73 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="radiobtncolor.aspx.cs" Inherits="ASPWebapplication_Example.radiobtncolor" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:RadioButton ID="rbnRed" runat="server" ForeColor="Red" GroupName="This is red color radio button" OnCheckedChanged="rbnRed_CheckedChanged" TabIndex="5" Text="Red" />
+            <asp:RadioButton ID="rbnBlue" runat="server" ForeColor="Blue" GroupName="This is blue color radio button" OnCheckedChanged="rbnBlue_CheckedChanged" TabIndex="5" Text="Blue" />
+            <asp:RadioButton ID="rbnGreen" runat="server" BorderStyle="None" ForeColor="Green" GroupName="This is Green color radio button" OnCheckedChanged="rbnGreen_CheckedChanged" TabIndex="5" Text="Green" />
+        </div>
+        <asp:Button ID="btn1" runat="server" Text="Submit" OnClick="btn1_Click" />
+    </form>
+    <asp:Label ID="label1" runat="server"></asp:Label>
+</body>
+</html>
+
+=====================================================================================================================================================================
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace ASPWebapplication_Example
+{
+    public partial class radiobtncolor : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbnRed_CheckedChanged(object sender, EventArgs e)
+        {
+            Response.Write("This is Red color");
+        }
+
+        protected void rbnBlue_CheckedChanged(object sender, EventArgs e)
+        {
+            Response.Write("This is Blue color");
+        }
+
+        protected void rbnGreen_CheckedChanged(object sender, EventArgs e)
+        {
+            Response.Write("This is Green color");
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "";
+            if(rbnRed.Checked)
+            {
+                label1.Text = "The color is" + rbnRed.Text;
+            }
+            else if(rbnBlue.Checked)
+            {
+                label1.Text = "The color is" + rbnBlue.Text;
+            }
+            else
+            {
+                label1.Text = "The color is" + rbnGreen.Text;
+            }
+        }
+    }
+}
