@@ -1,0 +1,61 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckBox.aspx.cs" Inherits="ASPWebapplication_Example.CheckBox" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h2> Select the course of you want to learn.</h2>
+            <asp:CheckBox ID="checkbox1" runat="server" Text="Btech" />
+            <asp:CheckBox ID="checkbox2" runat="server" Text="BE" />
+            <asp:CheckBox ID="checkbox3" runat="server" Text="Degree" />
+            <asp:CheckBox ID="checkbox4" runat="server" Text="MBBS" />
+            <asp:CheckBox ID="checkbox5" runat="server" Text="BA " />
+        </div>
+        <p> <asp:Button ID="btn1" runat="server" Text="Submit" OnClick="btn1_Click" /></p>
+        <p> <asp:Label ID="label1" runat="server" Text="You have Selected : "></asp:Label> </p>
+    </form>
+</body>
+</html>
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace ASPWebapplication_Example
+{
+    public partial class CheckBox : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            var check = "";
+            if(checkbox1.Checked)
+            {
+                check = checkbox1.Text;
+            }
+            if (checkbox2.Checked)
+                check = checkbox2.Text;
+            if (checkbox3.Checked)
+                check = checkbox3.Text;
+            if (checkbox4.Checked)
+                check = checkbox4.Text;
+            if (checkbox5.Checked)
+                check = checkbox5.Text;
+            label1.Text = check;
+        }
+        
+    }
+}
