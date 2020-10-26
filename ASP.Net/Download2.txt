@@ -1,0 +1,69 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DownloadFile.aspx.cs" Inherits="ASPWebapplication_Example.DownloadFile" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h3>Demo of Download at server side</h3>
+        <div>
+            <p>Click the button to download a file</p>
+            <asp:Button runat="server" ID="btn1" Text="click to download" OnClick="btn1_Click" />
+
+        </div>
+    </form>
+    <p>
+        <asp:Label ID="label1" runat="server"></asp:Label>
+    </p>
+</body>
+</html>
+
+==========================================================================================
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.IO;
+
+namespace ASPWebapplication_Example
+{
+    public partial class DownloadFile : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            var filepath = @"C:\Users\sadhana\Desktop\absmini-595.docx";
+            FileInfo file = new FileInfo(filepath);
+            if(file.Exists)
+            {
+                //clear the Response
+                Response.Clear();
+                //Add Header by specifying file name
+                Response.AddHeader("content Dispositon", "attachment;filenamee" + file.Name);
+                //add header for content length
+                Response.AddHeader("content-Length", file.Length.ToString());
+                //specify the content-type
+                Response.ContentType = "txt/plain";
+                //clearing flush
+                Response.Flush();
+                //transmit the file
+                Response.TransmitFile(file.FullName);
+                Response.End();
+            }
+            else
+            {
+                label1.Text = "Requested file is not available to download";
+            }
+        }
+    }
+}
