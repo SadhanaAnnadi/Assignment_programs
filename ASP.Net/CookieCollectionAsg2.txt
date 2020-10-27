@@ -1,0 +1,89 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsgnmentCookies.aspx.cs" Inherits="CookiesWebapp.AsgnmentCookies" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <asp:Label ID="label1" runat="server" Text="Select Courses as Preferenece"></asp:Label><br /><br />
+        <asp:CheckBox ID="checkbox1" runat="server" Text="BTech" OnCheckedChanged="checkbox1_CheckedChanged" /><br /><br />
+           <asp:CheckBox ID="checkbox2" runat="server" Text="BE" /><br /><br />
+           <asp:CheckBox ID="checkbox3" runat="server" Text="Degree" /><br /><br />
+           <asp:CheckBox ID="checkbox4" runat="server" Text="MBBS" /><br /><br />
+           <asp:CheckBox ID="checkbox5" runat="server" Text="BA" /><br /><br />
+        <asp:Button ID="button1" runat="server" Text="Checkon" />
+ </div>
+    </form>
+     <p>
+        <asp:Label ID="label2" runat="server"></asp:Label>
+    </p>
+</body>
+</html>
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace CookiesWebapp
+{
+    public partial class AsgnmentCookies : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.Cookies["Courses"].Expires = DateTime.Now.AddDays(-1);
+         }
+
+        protected void checkbox1_CheckedChanged(object sender, EventArgs e)
+        {
+            label2.Text = "";
+            //Adding cookies
+            if (checkbox1.Checked)
+                Response.Cookies["Courses"]["BTech"] = "You have checked for BTech and cookie triggerd"+"  ";
+            if (checkbox2.Checked)
+                Response.Cookies["Courses"]["BE"] = "You have checked for BE and cookie triggerd";
+            if (checkbox3.Checked)
+                Response.Cookies["Courses"]["Degree"] = "You have checked for Degree and cookie triggerd";
+            if (checkbox4.Checked)
+                Response.Cookies["Courses"]["MBBS"] = "You have checked for MBBS and cookie triggerd";
+            if (checkbox5.Checked)
+                Response.Cookies["Courses"]["BA"] = "You have checked for BA and cookie triggerd";
+
+            //=====Featching================//
+            if (Request.Cookies["Courses"].Values.ToString() != null)
+            {
+                if (Request.Cookies["Courses"]["BTech"] != null)
+                {
+                    label2.Text = label2.Text + Response.Cookies["Courses"]["BTech"] + " " + " ";
+                   
+                }
+                    
+                if (Request.Cookies["Courses"]["BE"] != null)
+                    label2.Text = label2.Text+ Response.Cookies["Courses"]["BE"] + " " + " ";
+                if (Request.Cookies["Courses"]["Degree"] != null)
+                    label2.Text = label2.Text + Response.Cookies["Courses"]["Degree"] + " " + " ";
+                if (Request.Cookies["Courses"]["MBBS"] != null)
+                    label2.Text = label2.Text + Response.Cookies["Courses"]["MBBS"] + " " + " ";
+                if (Request.Cookies["Courses"]["BA"] != null)
+                    label2.Text = label2.Text + Response.Cookies["Courses"]["BA"] + " " + " ";
+            }
+            else
+            {
+                label2.Text = "Please select yout choice";
+                Response.Cookies["Courses"].Expires = DateTime.Now.AddDays(-1);
+            }
+
+        }
+    }
+}

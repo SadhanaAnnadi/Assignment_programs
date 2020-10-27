@@ -1,0 +1,71 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsgnmentCookies.aspx.cs" Inherits="CookiesWebapp.AsgnmentCookies" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="label1" runat="server" Text="Label"></asp:Label><br /><br />
+            <asp:Label ID="label2" runat="server" Text="Label2"></asp:Label><br /><br />
+            <asp:Label ID="label3" runat="server" Text="Label3"></asp:Label><br /><br />
+             <asp:Label ID="label4" runat="server" Text="Label4"></asp:Label><br /><br />
+             <asp:Label ID="label5" runat="server" Text="Label5"></asp:Label><br /><br />
+            
+        </div>
+    </form>
+</body>
+</html>
+
+==================================================================================
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace CookiesWebapp
+{
+    public partial class AsgnmentCookies : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            HttpCookie obj1 = new HttpCookie("phones");
+            obj1.Value = "iphone";
+            Response.Cookies.Add(obj1);
+            var display1 = Response.Cookies["phones"].Value;
+            label1.Text = display1;
+
+            HttpCookie obj2 = new HttpCookie("TV");
+            obj2.Value = "Samsung";
+            Response.Cookies.Add(obj2);
+            var display2 = Response.Cookies["TV"].Value;
+            label2.Text = display2;
+
+            HttpCookie obj3 = new HttpCookie("Laptop");
+            obj3.Value = "HP";
+            Response.Cookies.Add(obj3);
+            var display3 = Response.Cookies["Laptop"].Value;
+            label3.Text = display3;
+
+            HttpCookie obj4 = new HttpCookie("Employee");
+            obj4.Value = "Harsh";
+            Response.Cookies.Add(obj4);
+            var display4 = Response.Cookies["Employee"].Value;
+            label4.Text = display4;
+
+            HttpCookie obj5 = new HttpCookie("Company");
+            obj5.Value = "DXC";
+            Response.Cookies.Add(obj5);
+            var display5 = Response.Cookies["Company"].Value;
+            label5.Text = display5;
+
+
+        }
+    }
+}

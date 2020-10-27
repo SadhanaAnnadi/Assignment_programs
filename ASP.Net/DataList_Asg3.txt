@@ -1,0 +1,73 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DataList_Asgnmt.aspx.cs" Inherits="CookiesWebapp.DataList_Asgnmt" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <p>The Data present in dataList</p>
+        <div>
+            <asp:DataList ID="datalist1" runat="server">
+                <ItemTemplate>
+                    <asp:Table ID="table1" runat="server" CellPadding="2" CellSpacing="0"
+                        Border="1" Style="width:250px;height:100px;background-color:bisque ">
+
+                    </asp:Table>
+                    <tr>
+                        <td>
+                            <strong>Firstname</strong><span class="fn"><%# Eval("Firstname") %></span><br />
+                             <strong>Lastname</strong><span class="ln"><%# Eval("Lastname") %></span><br />
+                             <strong>Designation</strong><span class="dg"><%# Eval("Designation") %></span><br />
+                             <strong>Location</strong><span class="loc"><%# Eval("Location") %></span><br />
+                             <strong>Country</strong><span class="ctry"><%# Eval("Country") %></span><br />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace CookiesWebapp
+{
+    public partial class DataList_Asgnmt : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("FirstName");
+            dt.Columns.Add("LastName");
+            dt.Columns.Add("Designation");
+            dt.Columns.Add("Location");
+            dt.Columns.Add("Country");
+
+
+            dt.Rows.Add("sindu", "Priya", "Manager", "Hyderabad", "India");
+            dt.Rows.Add("sahith", "Reddy", "Analyst", "Chennai", "India");
+            dt.Rows.Add("kaveri", "Varma", "Developer", "pune", "India");
+            dt.Rows.Add("Krishna", "Kanth", "Tester", "Banglore", "India");
+            dt.Rows.Add("Sri", "Priya", "HR", "New Delhi", "India");
+            dt.Rows.Add("sai", "sujith", "Manager", "Chennai", "India");
+            dt.Rows.Add("Ravi", "Prasad", "Developer", "Hyderabad", "India");
+            dt.Rows.Add("Uday", "Raj", "Analyst", "pune", "India");
+            dt.Rows.Add("harshith", "Reddy", "Manager", "Banglore", "India");
+            dt.Rows.Add("Harsha", "Koppula", "Developer", "Chennai", "India");
+            datalist1.DataSource = dt;
+            datalist1.DataBind();
+        }
+    }
+}
