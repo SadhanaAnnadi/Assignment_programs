@@ -1,0 +1,52 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DataBase_DataGrid.aspx.cs" Inherits="DataGrid_ASP.DataBase_DataGrid" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:DataGrid ID="datagrid1" runat="server" OnSelectedIndexChanged="datagrid1_SelectedIndexChanged"></asp:DataGrid>
+        </div>
+    </form>
+</body>
+</html>
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace DataGrid_ASP
+{
+    public partial class DataBase_DataGrid : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            //establish database connection
+            using (SqlConnection con = new SqlConnection("server=SADHANA\\MSSQLSERVER01;database=agnmt_programs;integrated security=true"))
+            {
+                SqlDataAdapter adp = new SqlDataAdapter("select * from Bank", con);//to retrive data from data base
+                DataSet ds = new DataSet();//To convert data in to the grid
+                adp.Fill(ds, "Bank");
+                datagrid1.DataSource = ds;
+                datagrid1.DataBind();
+            }
+
+        }
+
+        protected void datagrid1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
