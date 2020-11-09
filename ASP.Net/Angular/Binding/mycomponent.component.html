@@ -1,0 +1,15 @@
+<p>mycomponent works!</p>
+<p>{{text}}</p>
+<p>{{uniform}}</p>
+<ul>
+  <li *ngFor="let item of uniform">Elements of array:{{item}}</li>
+</ul>
+<div>
+  <input [(ngModel)]="name" type="text" /><!--two way binding-->
+  {{name}}
+</div>
+<input [disabled]="isdisable" type="text" value="Sindu" /><!-- property binding-->
+<!--Style Binding-->
+<h2 [style.color]="'green'">This is Style Binding</h2>
+<h2 [style.color]="hasError?'Red':'green'">This is Style Binding</h2>
+<h2 [ngStyle]="titleStyle">This is Style Binding</h2>
