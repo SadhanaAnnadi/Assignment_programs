@@ -1,0 +1,119 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>This is Table of single line Razor Expression</h2>
+        <table border="1">
+            <tr>
+                <td>Day</td>
+                <td>@DateTime.Now.Day</td>
+            </tr>
+            <tr>
+                <td>Hour</td>
+                <td>@DateTime.Now.Hour</td>
+            </tr>
+            <tr>
+                <td>Minute</td>
+                <td>@DateTime.Now.Minute</td>
+            </tr>
+            <tr>
+                <td>second</td>
+                <td>@DateTime.Now.Second</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>These are examples of multi line Expressions in Razor</h2>
+        @{ 
+            var s = 2;
+            var add=s+5;
+        }
+        <label> Adding 5 to @s  gives @add</label>
+    </div>
+    <div>
+        @{
+            var exp = 0;
+            while (exp< 5)
+            {
+                exp += 1;
+                <p>while loop executed @exp time</p>
+            }
+        }
+    </div>
+    <div>
+        <h2>Loop Statements in Razor multiline expressions</h2>
+        @{ 
+            string[] names = { "Sindhu", "Kavya", "Sreya", "padmaja" };
+            int len = names.Length;
+        }
+        @foreach(var val in names)
+        {
+            <ul>
+                <li>
+                    @val
+                </li>
+            </ul>
+           
+        }
+        <p>
+            The maximum length of array names is @len
+        </p>
+        @for(int k=1;k<6;k++)
+        {
+        <p>index value is @k</p>
+        }
+    </div>
+    <div>
+        <h2>Condition statements in Razor Multiline expressions</h2>
+        @{
+            var price = 500;
+            var weekday = DateTime.Now.DayOfWeek.ToString();
+
+        }
+        @if (price > 200)
+        {
+            <p>It has Height cost</p>
+        }
+        else if (price < 200)
+        {
+            <p> It has lowest cost</p>
+        }
+        else
+        {
+            <p>It has average Cost</p>
+        }
+
+<h2>This is Switch case example</h2>
+        @switch (weekday)
+        {
+            case "Monday":
+                <p>@weekday</p>
+                <p>Today is first day of the week</p>
+                break;
+            case "Thrusday":
+                <p>@weekday</p>
+                <p>Today is mid of the week</p>
+                break;
+            case "Saturday":
+                <p>@weekday</p>
+                <p>Today is a weekend</p>
+                break;
+            default:
+                <p>Today is @weekday</p>
+                break;
+
+
+        }
+    </div>
+</body>
+</html>
