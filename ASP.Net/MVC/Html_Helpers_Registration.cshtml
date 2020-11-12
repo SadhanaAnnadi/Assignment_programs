@@ -1,0 +1,118 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h2>Registration Form</h2>
+        @using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+        { 
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("UserName:")
+                   
+                </td>
+                <td>
+                    @Html.TextBox("txt1")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Password:")
+                </td>
+                <td>
+                    @Html.Password("psw1")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Gender:")
+                </td>
+                <td>
+                    <label>Male</label>@Html.RadioButton("Gender", "Male", true, new { id = "male" })
+                    <label>Female</label>@Html.RadioButton("Gender", "Female", true, new { id = "female" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Address:")
+                </td>
+                <td>
+                    @Html.TextArea("txtArea")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Hobbies:")
+                </td>
+                <td>
+                    <label>Reading Books</label>@Html.CheckBox("chbox1")
+                    <label>Listening Music</label>@Html.CheckBox("chbox2")
+                    <label>Dancing</label>@Html.CheckBox("chbox3")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Courses:")
+                </td>
+                <td>
+                    @Html.DropDownList("Courses", new List<SelectListItem>
+                             {
+                                 new SelectListItem { Text = "IT", Value = "1", Selected=true},
+                                 new SelectListItem { Text = "CSE", Value = "2"},
+                                 new SelectListItem { Text = "ECE", Value = "3"},
+                                 new SelectListItem { Text = "Mech", Value = "4"}
+                             }, "Select Courses")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Skills:")
+                </td>
+                <td>
+                    @Html.DropDownList("Skills", new List<SelectListItem>
+                             {
+                                 new SelectListItem { Text = "C", Value = "1", Selected=true},
+                                 new SelectListItem { Text = "C++", Value = "2"},
+                                 new SelectListItem { Text = "Java", Value = "3"},
+                                 new SelectListItem { Text = "c#", Value = "4"},
+                                 new SelectListItem { Text = "Python", Value = "5"}
+                             }, "Select Skills")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("CollegeName:")
+                </td>
+                <td>
+                    @Html.ListBox("CollegeName", new List<SelectListItem>
+            {
+            new SelectListItem { Text = "JNTUH", Value = "1", Selected=true},
+            new SelectListItem { Text = "VNR College", Value = "2"},
+            new SelectListItem { Text = "Vardhaman college", Value = "3"},
+            new SelectListItem { Text = "Geetham", Value = "4"},
+            new SelectListItem { Text = "NIT Warangal", Value = "5"}
+            })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td> <button>Register</button></td>
+            </tr>
+        </table>
+       }
+    </div>
+    
+</body>
+</html>
