@@ -13,7 +13,7 @@ namespace handling_Exception_MVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalFilters.Filters.Add(new HandleErrorAttribute());
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());// We write this when we want to handle the errors globally
         }
     }
 }
