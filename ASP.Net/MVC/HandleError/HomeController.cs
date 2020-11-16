@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace handling_Exception_MVC.Controllers
 {
-   [HandleError]
+  [HandleError]//This is used when we donot handle the error globally
     public class HomeController : Controller
     {
         // GET: Home
