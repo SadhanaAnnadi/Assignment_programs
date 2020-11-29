@@ -1,0 +1,56 @@
+﻿@model Project1.Models.Loan
+@{
+    ViewBag.Title = "EmpView";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Report</title>
+</head>
+<body >
+    <div class="container text-center">
+        @if (Model != null)
+        {
+            <h2>Loan Details:</h2>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <table class="table table-responsive">
+                    <tr>
+                        <td>AccountID:</td>
+                        <td> @Model.AccountID</td>
+                    </tr>
+                    <tr>
+                        <td>LoanAmount:</td>
+                        <td> @Model.LoanAmount</td>
+                    </tr>
+                    <tr>
+                        <td>LoanType:</td>
+                        <td>@Model.LoanType</td>
+                    </tr>
+                    <tr>
+                        <td>Tenure:</td>
+                        <td> @Model.Tenure</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <form>
+        <button class="btn bg-success" name="button" value="accept" formaction="Status" >Accept</button>
+        <button class="btn bg-danger" name="button" value="reject" formaction="Status"> Reject</button>
+    </form>
+        }
+        else
+        {
+    <p>No data found</p>
+            }
+    </div>
+
+
+</body>
+</html>
+
+
