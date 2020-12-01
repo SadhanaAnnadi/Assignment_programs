@@ -1,0 +1,40 @@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="jumbotron" style="color:darkblue">
+
+        <h1 style="font-family:Cambria" class="text-center">PECUNIA BANK</h1>
+    </div>
+
+    <div class="container" style="font-family:Cambria ;font-size:25px">
+        @*<h3 class="text-center">Login with proper details</h3><br /><br /><br />*@
+        @*<p class="text-center"> <button type="button" class="btn btn-primary">Login</button></p>*@
+        <b style="background-color:white">
+            Pecunia₹ Finance Limited, established in the year 2015, is an Indian private sector bank headquartered in Bangalore and is functioning only in Bangalore, India. In January 2019, Reserve Bank of India (RBI) issued the license to Pecunia₹ Finance Limited, to carry on banking business.
+            It has one of the largest and most respected Wealth Management teams in India providing the widest range of solutions to individuals and employed professionals.
+
+        </b>
+
+        @*<p class="text-center"><button type="button" class="btn btn-primary" onclick="window.location.href='Home1'">Login</button></p>*@
+
+
+
+    </div>
+
+</body>
+</html>
+
