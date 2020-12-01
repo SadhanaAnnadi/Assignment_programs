@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/alertifyjs/alertify.min.css" rel="stylesheet" />
+    <link href="~/Content/alertifyjs/themes/default.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(" Pecunia Bank", "FirstPage", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home1", "Index", "Home1")</li>*@
+                    <li>@Html.ActionLink("Home", "FirstPage", "Home")</li>
+                    <li>@Html.ActionLink("Account", "Home", "Account")</li>
+                    <li>@Html.ActionLink("Transaction", "Index", "Transcations")</li>
+
+                    <li>@Html.ActionLink("Loan", "Index", "Loan")</li>
+                    <li>@Html.ActionLink("Passbook", "Account_summary", "Passbook")</li>
+                    @*<li>@Html.ActionLink("users", "Index", "users")</li>*@
+
+                </ul>
+
+
+
+                <ul class="nav navbar-right" style="color:white">
+
+                    @if (Session["Account_Number"] != null)
+                    {
+                        <h4 style="color:white">Account number: @Session["Account_Number"]</h4>
+
+                        @Html.ActionLink("Logout", "Login", "Login")
+                    }
+                    else
+                    {
+                        @Html.Partial("_LoginPartial")
+                    }
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+    @*<div class="container body-content" style="background-image:url(https://www.avanade.com/~/media/images/content/background/thinking/the-everyday-bank.jpg);width:100%;height:100%">*@
+
+
+    <div class="container body-content" style="background-image:url(https://www.avanade.com/~/media/images/content/background/thinking/the-everyday-bank.jpg);width:100%;height:100%">
+
+
+        <div class="container body-content" style="color:black">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Pecuminia Bank</p>
+            </footer>
+        </div>
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/alertify.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>
+
