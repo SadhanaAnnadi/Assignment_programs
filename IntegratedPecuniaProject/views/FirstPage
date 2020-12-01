@@ -1,0 +1,27 @@
+
+@{
+    ViewBag.Title = "FirstPage";
+}
+
+<div class="jumbotron">
+
+    <h1 class="text-center">PECUNIA BANK</h1>
+</div>
+
+<div class="container" style="font-family:Cambria;font-size:20px;text-align:justify">
+
+    <ul>
+        <li>Pecunia₹ Finance Limited, established in the year 2015, is an Indian private sector bank headquartered in Bangalore and is functioning only in Bangalore, India.</li>
+        <li>In January 2019, Reserve Bank of India (RBI) issued the license to Pecunia₹ Finance Limited, to carry on banking business.</li>
+        <li>They have one of the largest and most respected Wealth Management teams in India providing the widest range of solutions to individuals and employed professionals.</li>
+        <li>As of December 30, 2018 Pecunia₹ has a net-worth of approximately Rs 730 crore and micro-finance loans of Rs 300 crore in its books.</li>
+        <li>It offers a wide range of banking products and financial services for retail customers through a variety of delivery channels in the areas of personal finance,  life insurance etc.</li>
+    </ul>
+
+
+
+
+
+
+</div>
+
