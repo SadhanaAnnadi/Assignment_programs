@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FinalProject.Models.Table1>
+
+@{
+    ViewBag.Title = "account1";
+}
+
+<h2>account1</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_Holdername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Confirm_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aadhaar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account_Holdername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Confirm_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aadhaar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Account_Number }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.Account_Number }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.Account_Number })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Next</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Pecunia Bank</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Account
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Updatedetails">Update details</a>
+                        @*<a class="dropdown-item" href="Login">Login</a>*@
+                        @*<a class="dropdown-item" href="#">Update Customer Contact</a>
+                <a class="dropdown-item" href="#">Update Customer Address</a>
+                <a class="dropdown-item" href="#">Delete Address</a>*@
+                    </div>
+                </li>
+               
+
+                <li class="nav-item">
+            <a class="nav-link" href="http://localhost:64616/Transcations">Transaction</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:64616/Loan">Loan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:64616/passbook/Account_summary">Passbook</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Home">Logout</a>
+        </li>
+
+
+
+
+            </ul>
+        </nav>
+    </div>
+
+    <div class="jumbotron">
+
+        <h1 class="text-center">PECUNIA BANK</h1>
+
+    </div>
+
+    <div class="container-fluid bg-3 text-center" ; style="font-family:Cambria;font-family:15px;text-align:left">
+
+        <div class="row">
+            <div class="col-sm-4" ; style="text-align:left">
+                <h4>Transaction</h4>
+                <ul>
+                    <li>Transfer money to any other bank account with Internet Banking</li>
+                    <li>Transfer funds instantly</li>
+                    <li>Pay friends and merchants using their accounts</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h4>Loan</h4>
+                <ul style="text-align:left">
+                    <li>Car Loan</li>
+                    <li>Home Loan</li>
+                    <li>Personal Loan</li>
+                    <li>Gold Loan</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h4>Passbook</h4>
+                <ul style="text-align:justify">
+                    <li>Bank account passbooks updated can see their passbook to check their account balance</li>
+                    <li>Passbook keeps a record of both the debt and credit transactions,an account holder can see his complete account statement right from the day of account opening using a passbook</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
